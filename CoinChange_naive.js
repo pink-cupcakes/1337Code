@@ -40,23 +40,22 @@
 
 // Input: amount = 10, coins = [10] 
 // Output: 1
+
+// 10 = 10
+// 10 = 5+5
+// 10 = 5+2+2+1
+// 10 = 5+2+1+1+1
+// 10 = 5+1+1+1+1+1
+// 10 = 2+2+2+2+2
+// 10 = 2+2+2+2+1+1
+// 10 = 2+2+2+1+1+1+1
+// 10 = 2+2+1+1+1+1+1+1
+// 10 = 2+1+1+1+1+1+1+1+1
+// 10 = 1+1+1+1+1+1+1+1+1+1
 (() => {
+  const seen = {};
   const coinCombinations = (val, coins) => {
-    let res = 0;
-    let seen = {};
-    for (let i = 0; i < coins.length; i++) {
-      let coin = coins[i];
-      if (coin === val) {
-        res += 1;
-      } else if (coin < val) {
-        if (!seen[coin]) {
-          let subVal = val - coin;
-          res += coinCombinations(subVal, coins);
-          seen[subVal] = true;
-        };
-      };
-    };
-    return res;
+    
   };
 
   let coins1 = [1, 2, 5];

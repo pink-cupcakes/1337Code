@@ -17,7 +17,7 @@
     'M': 1000
   };
 
-  const convertFromString = (str) => {
+  const romanToInt = (str) => {
     const letters = str.split('');
     let prevVal;
     let seenReduce = false;
@@ -42,5 +42,5 @@
     return res;
   };
 
-  console.log(convertFromString('MMMCMXCIX'));
+  console.log(romanToInt('MMMCMXCIX'));
 })()

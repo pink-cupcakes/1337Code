@@ -15,3 +15,17 @@
 // You could also try reversing an integer. However, if you have solved the problem "Reverse Integer", you know that the reversed integer might overflow. How would you handle such case?
 
 // There is a more generic way of solving this problem.
+
+// 432101234
+
+(() => {
+  const isPalindrome = (val) => {
+    while(val > 0) {
+      val -= (val%10)*Math.pow(10,(Math.floor(Math.log10(val))));
+      val = Math.floor(val/10);
+    };
+    return val === 0 ? true : false;
+  };
+
+  console.log(isPalindrome(51234235));
+})()

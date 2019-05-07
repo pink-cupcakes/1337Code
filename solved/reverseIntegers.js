@@ -23,6 +23,8 @@
 
 (() => {
   const reverse = (val) => {
+    let isNegative = val < 0;
+    val = Math.abs(val);
     let ints = [];
     while(val > 0) {
       ints.push(val % 10);
@@ -33,7 +35,10 @@
       let val = ints[i];
       res += (val * Math.pow(10, ints.length - i - 1));
     };
-    return res;
+    if(res > Math.pow(2, 31)) {
+      return 0;
+    };
+    return isNegative ? -res : res;
   };
-  console.log(reverse(1200))
+  console.log(reverse(1563847412))
 })()

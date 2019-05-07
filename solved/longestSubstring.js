@@ -13,7 +13,7 @@
 // Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
 (() => {
-  const findLongest = (str) => {
+  const lengthOfLongestSubstring = (str) => {
     let res = '';
     let letters = str.split('');
     let i = 0;
@@ -23,18 +23,23 @@
       i++;
       for(let j = i; j < str.length; j++) {
         let subletter = letters[j];
+        let start = i - 1;
         if(letterSet.has(subletter)) {
-          let start = i - 1;
           if(j - start > res.length) {
             res = str.substring(start, j);
-          };
+          }
           break;
+        };
+        if(j === str.length - 1) {
+          if(j + 1 - start > res.length) {
+            res = str.substring(start, j + 1);
+          };
         };
         letterSet.add(subletter);
       };
     };
-    return res;
+    return res.length;
   };
 
-  console.log(findLongest('pwwkew'))
+  console.log(lengthOfLongestSubstring('abcd'))
 })()

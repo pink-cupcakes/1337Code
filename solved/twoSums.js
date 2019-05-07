@@ -15,10 +15,10 @@
 // return [0, 1].
 
 (() => {
-  const hasIndexes = (arr, target) => {
+  const hasIndexes = (nums, target) => {
     let seekingVals = {};
-    for(let i = 0; i < arr.length; i++) {
-      let val = arr[i];
+    for(let i = 0; i < nums.length; i++) {
+      let val = nums[i];
       let seeker = target - val;
       if(seekingVals[val] !== undefined) {
         return [seekingVals[val], i];

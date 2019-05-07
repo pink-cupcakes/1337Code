@@ -24,10 +24,10 @@
  * Your solution should run in O(log n) time and O(1) space.
  */
 
- const findSingle = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== arr[i + 1]) {
-      return arr[i];
+ const findSingle = (nums) => {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== nums[i + 1]) {
+      return nums[i];
     };
     i++;
   };
