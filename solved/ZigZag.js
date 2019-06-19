@@ -31,15 +31,17 @@
     let matrixIndex = 0;
     for(let i = 0; i < letters.length; i++) {
       matrix[matrixIndex].push(letters[i]);
-      if(matrixIndex === 0) {
+      if(matrixIndex === 0 ) {
         upArray = true;
       } else if(matrixIndex === zaglen - 1) {
         upArray = false;
       };
-      if(upArray) {
-        matrixIndex++;
-      } else {
-        matrixIndex--;
+      if(zaglen - 1 > 0) {
+        if(upArray) {
+          matrixIndex++;
+        } else {
+          matrixIndex--;
+        };
       };
     };
     return(matrix.reduce((resArr, arr) => {
@@ -48,5 +50,5 @@
     }, []).join(''));
   };
 
-  console.log(workatpaypal("PAYPALISHIRING", 3));
+  console.log(workatpaypal("AB", 1));
 })()

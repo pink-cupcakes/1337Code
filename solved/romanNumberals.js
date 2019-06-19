@@ -43,7 +43,7 @@
     };
   };
 
-  const convertInteger = (num) => {
+  const intToRoman = (num) => {
     let vals = [];
     let res = '';
     while(num > 0) {
@@ -57,5 +57,5 @@
     return res;
   };
 
-  console.log(convertInteger(3999))
+  console.log(intToRoman(3999))
 })()

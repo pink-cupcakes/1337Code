@@ -28,9 +28,9 @@
         let val2 = arr[j];
         let sum = val + val2;
         if(twosum[sum] === undefined) {
-          twosum[sum] = [new Set([val, val2])];
+          twosum[sum] = [new Set([i, j])];
         } else {
-          twosum[sum].push(new Set([val, val2]));
+          twosum[sum].push(new Set([i, j]));
         };
       };
     };
@@ -40,9 +40,10 @@
       let negVal = arr[j] * -1;
       if(twosum[negVal] !== undefined) {
         let res1 = [];
-        for(const subarr of twosum[negVal]) {
-          let clonearr = [...subarr];
-          clonearr.push(arr[j]);
+        for(const subSet of twosum[negVal]) {
+          if(!subSet.has(j)) {
+            let cloneSubSet = new Set([])
+          }
           res1.push(clonearr);
         };
         res = res.concat(res1);
