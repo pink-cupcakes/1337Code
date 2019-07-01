@@ -18,25 +18,26 @@
 //   [3,2,1]
 // ]
 const swap = (arr, index) => {
-  let tempVal = arr[index - 1];
+  let initialVal = arr[index - 1];
+  console.log(`Array is ${arr}, prev val ${arr[index - 1]}, initialVal: ${initialVal}, current val ${arr[index]}`)
   arr[index - 1] = arr[index];
-  arr[index] = tempVal;
+  arr[index] = initialVal;
+  console.log(`result ${arr}`)
   return arr;
 }
 
 (() => {
-  const func = (arr) => {
+  const johnsonThomasPermutations = (arr) => {
     let res = [];
     for(let i = 0; i < arr.length; i++) {
-      let j = arr.length - 1;
-      while(j > 0) {
-        arr = swap(arr, j);
+      let lastIndex = arr.length - 1;
+      while(lastIndex > 0) {
+        arr = swap(arr, lastIndex);
         res.push([...arr]);
-        j--;
+        lastIndex--;
       };
     };
     return res;
   };
-
-  console.log(func([1, 2, 3, 4, 5, 6]))
+  console.log(johnsonThomasPermutations([1, 2, 3]))
 })()

@@ -18,11 +18,30 @@
 //   "()()()"
 // ]
 
+const swap = (arr, index) => {
+  let tempVal = arr[index - 1];
+  arr[index - 1] = arr[index];
+  arr[index] = tempVal;
+  return arr;
+}
+
 (() => {
-  const func = (num) => {
-    let parens = Array(num).fill('(');
-    const innerFunc = (vals) => {
-      
-    }
-  }
-})
+  const generateParens = (num) => {
+    let res = [];
+    let openParens = Array(num).fill('(');
+    let closeParens = Array(num).fill(')');
+    let parens = openParens.concat(closeParens);
+    for(let i = 0; i < parens.length; i++) {
+      let j = parens.length - 1;
+      while(j > 0) {
+        parens = swap(parens, j);
+        res.push([...parens]);
+        j--;
+      };
+    };
+    return res.map((subarr) => {
+      return subarr.join('');
+    });
+  };
+  console.log(generateParens(2))
+})()

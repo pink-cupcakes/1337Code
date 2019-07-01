@@ -73,5 +73,5 @@ const numVals = {
     return result;
   };
 
-  console.log(phoneCombo(123))
+  console.log(phoneCombo(23))
 })()
