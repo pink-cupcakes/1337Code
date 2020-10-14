@@ -1,0 +1,3 @@
+Remove duplicates from a linked list
+
+Problem from CTCI
